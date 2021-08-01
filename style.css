@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+  --clr-orange: hsl(6, 100%, 80%);
+  --clr-pink: hsl(335, 100%, 65%);
+
+  --clr-blue-100: hsl(243, 100%, 93%);
+  --clr-blue-300: hsl(229, 7%, 55%);
+  --clr-blue-600: hsl(228, 56%, 26%);
+  --clr-blue-900: hsl(229, 57%, 11%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  background-image: url('images/bg-desktop.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* UTILITIES */
+.text-emphasize {
+  color: var(--clr-blue-100);
+  font-weight: 700;
+}
+
+.text-neutral {
+  color: hsla(243, 100%, 93%, 0.8);
+}
+
+.text-light {
+  color: var(--clr-blue-100);
+}
+
+.text-dark {
+  color: var(--clr-blue-900);
+}
+
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* MAIN */
+main {
+  width: min(1000px, 85%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-1,
+.card-2 {
+  background-color: var(--clr-blue-600);
+  padding: 2.5rem;
+  border-radius: 15px;
+  width: 100%;
+}
+
+/* CARD 1 */
+.logo {
+  max-width: 150px;
+}
+
+.icon-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.icon-border {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  background-color: var(--clr-blue-900);
+  margin-right: 1.25rem;
+  border-radius: 10px;
+}
+
+.icon {
+  max-width: 24px;
+}
+
+/* CARD 2 */
+.progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 25px;
+    margin: 1rem 0 0.5rem;
+    background-color: hsl(229, 57%, 20%);
+    display: flex;
+    align-items: center;
+}
+
+.bar {
+    margin-left: 3px;
+    height: 14px;
+    width: 75%;
+    border-radius: 25px;
+    background: linear-gradient(to right, var(--clr-orange), var(--clr-pink));
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.indicator {
+    margin-right: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* CARD 3 */
+.card-3 {
+  background-color: white;
+  width: 160px;
+  height: 60px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+}
+
+.card-3 p {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.card-3 span {
+  font-size: 14px;
+  color: var(--clr-blue-300);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url('images/bg-mobile.png');
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .card-2 {
+    margin: 1rem 0 0 0;
+  }
+
+  .card-3 {
+    bottom: -30px;
+  }
+}
