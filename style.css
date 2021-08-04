@@ -131,7 +131,7 @@ main {
   background: linear-gradient(to right, var(--clr-orange), var(--clr-pink));
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .indicator {
