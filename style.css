@@ -22,10 +22,12 @@ body {
   font-weight: 400;
   background-image: url('images/bg-desktop.png');
   background-repeat: no-repeat;
+  background-position-y: 50vh;
   background-size: cover;
   min-height: 100vh;
   display: grid;
   place-items: center;
+  background-color: var(--clr-blue-900);
 }
 
 img {
@@ -61,7 +63,7 @@ img {
 main {
   width: min(1000px, 85%);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   position: relative;
 }
@@ -70,11 +72,17 @@ main {
 .card-2 {
   background-color: var(--clr-blue-600);
   padding: 2.5rem;
-  border-radius: 15px;
+  border-radius: 10px;
   width: 100%;
 }
 
 /* CARD 1 */
+.card-1 {
+  max-width: 360px;
+  border-top-right-radius: 100px;
+  margin-right: 36px;
+}
+
 .logo {
   max-width: 150px;
 }
@@ -101,49 +109,65 @@ main {
 }
 
 /* CARD 2 */
+.card-2 {
+  padding: 2.5rem 2rem;
+}
+
 .progress {
-    width: 100%;
-    height: 20px;
-    border-radius: 25px;
-    margin: 1rem 0 0.5rem;
-    background-color: hsl(229, 57%, 20%);
-    display: flex;
-    align-items: center;
+  width: 100%;
+  height: 20px;
+  border-radius: 25px;
+  margin: 1rem 0 0.5rem;
+  background-color: hsl(229, 57%, 20%);
+  display: flex;
+  align-items: center;
 }
 
 .bar {
-    margin-left: 3px;
-    height: 14px;
-    width: 75%;
-    border-radius: 25px;
-    background: linear-gradient(to right, var(--clr-orange), var(--clr-pink));
-    display: flex;
-    align-items: center;
-    justify-content: end;
+  margin-left: 3px;
+  height: 14px;
+  width: 75%;
+  border-radius: 25px;
+  background: linear-gradient(to right, var(--clr-orange), var(--clr-pink));
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .indicator {
-    margin-right: 3px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: white;
+  margin-right: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
 }
 
 /* CARD 3 */
 .card-3 {
   background-color: white;
   width: 160px;
-  height: 60px;
+  height: 64px;
   border-radius: 10px;
+  border-bottom-right-radius: 0;
   display: grid;
   place-items: center;
   position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+.card-3::after {
+  content: '';
+  position: absolute;
+  border-top: 16px solid white;
+  border-left: 16px solid transparent;
+  top: 64px;
+  right: 0px;
 }
 
 .card-3 p {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 .card-3 span {
@@ -151,13 +175,26 @@ main {
   color: var(--clr-blue-300);
 }
 
+@media screen and (max-width: 1440px) {
+  body {
+    background-size: auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
   body {
     background-image: url('images/bg-mobile.png');
+    background-position-y: 0;
+    background-size: cover;
   }
 
   main {
     flex-direction: column;
+  }
+
+  .card-1 {
+    margin-right: 0;
+    max-width: 100%;
   }
 
   .card-2 {
@@ -165,6 +202,16 @@ main {
   }
 
   .card-3 {
-    bottom: -30px;
+    border-bottom-right-radius: 10px;
+    align-self: center;
+    bottom: -32px;
+    top: initial;
+    right: initial;
+  }
+
+  .card-3::after {
+    content: '';
+    position: absolute;
+    border: none;
   }
 }
