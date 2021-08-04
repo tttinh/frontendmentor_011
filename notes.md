@@ -1,3 +1,0 @@
-- Learn more about border radius - maker curve on a corner.
-- Learn about ::before, ::after.
-- Learn to build progress bar.
